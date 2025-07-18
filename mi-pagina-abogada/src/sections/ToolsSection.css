@@ -1,0 +1,96 @@
+/* src/sections/ToolsSection.css */
+
+.tools-section {
+  padding: 80px 40px; /* Consistente con otras secciones */
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--color-background); /* Fondo general de la página */
+  color: var(--color-text-dark);
+  border-bottom: 1px solid var(--color-border); /* Separador sutil */
+}
+
+.tools-section .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tools-section .section-title {
+  font-size: 2.8em;
+  color: var(--color-primary-dark);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.tools-section .section-subtitle {
+  font-size: 1.2em;
+  color: var(--color-text-dark);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* Contenedor de la cuadrícula de herramientas */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+  gap: 30px; /* Espacio entre los bloques de herramientas */
+}
+
+/* Tarjeta individual de herramienta */
+.tool-card {
+  background-color: var(--color-text-light); /* Fondo blanco para los bloques */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Para organizar el contenido verticalmente */
+  flex-direction: column;
+  justify-content: space-between; /* Espacia el contenido */
+  text-align: center; /* Centra el texto dentro del bloque */
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tool-card h3 {
+  font-family: var(--font-family-display);
+  font-size: 1.6em;
+  color: var(--color-primary-dark);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--color-accent); /* Línea de acento */
+  padding-bottom: 10px;
+  display: inline-block; /* Para que la línea de acento solo abarque el texto */
+  width: auto; /* Ajusta el ancho al contenido */
+  max-width: 100%;
+}
+
+.tool-card p {
+  font-family: var(--font-family-primary);
+  font-size: 1em;
+  color: var(--color-text-dark);
+  margin-bottom: 20px; /* Espacio antes del botón */
+  flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+}
+
+/* Estilos para los botones dentro de las tarjetas */
+.tool-card .btn {
+  width: 100%; /* Botón al 100% del ancho del bloque */
+  margin-top: auto; /* Empuja el botón al final del bloque */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .tools-section {
+    padding: 60px 20px;
+  }
+  .tools-section .section-title {
+    font-size: 2.2em;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+}

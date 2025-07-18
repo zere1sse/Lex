@@ -1,0 +1,117 @@
+/* src/sections/GlossarySection.css */
+.glossary-section {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--color-primary-light); /* Un fondo suave */
+  color: var(--color-text-dark);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.glossary-section .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.glossary-section .section-title {
+  font-size: 2.8em;
+  color: var(--color-primary-dark);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.glossary-section .section-subtitle {
+  font-size: 1.2em;
+  color: var(--color-text-dark);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.glossary-content {
+  background-color: var(--color-text-light); /* Fondo blanco para el contenido */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.glossary-search-input {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 25px; /* Bordes más redondeados */
+  font-size: 1.1em;
+  font-family: var(--font-family-primary);
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.glossary-search-input::placeholder {
+  color: var(--color-text-dark);
+  opacity: 0.7;
+}
+
+.glossary-search-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(var(--color-accent-rgb), 0.2);
+}
+
+.glossary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.glossary-item {
+  padding: 20px 0;
+  border-bottom: 1px dashed var(--color-border); /* Separador sutil */
+}
+
+.glossary-item:last-child {
+  border-bottom: none; /* No hay borde en el último elemento */
+}
+
+.glossary-item .term-title {
+  font-family: var(--font-family-display);
+  font-size: 1.6em;
+  color: var(--color-accent); /* Color de acento para el término */
+  margin-bottom: 8px;
+}
+
+.glossary-item .term-definition {
+  font-family: var(--font-family-primary);
+  font-size: 1em;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+}
+
+.no-results {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-text-dark);
+  padding: 30px;
+  font-size: 1.1em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .glossary-section {
+    padding: 60px 20px;
+  }
+  .glossary-section .section-title {
+    font-size: 2.2em;
+  }
+  .glossary-search-input {
+    font-size: 1em;
+    padding: 12px 15px;
+  }
+  .glossary-item .term-title {
+    font-size: 1.4em;
+  }
+}

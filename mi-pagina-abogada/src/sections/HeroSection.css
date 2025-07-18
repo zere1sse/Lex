@@ -1,0 +1,99 @@
+/* src/sections/HeroSection.css */
+
+.hero-section {
+    background: url('/ruta/a/tu/imagen-hero.jpg') no-repeat center center/cover; /* Reemplaza con tu imagen */
+    background-color: var(--color-background-dark); /* Color de fallback si la imagen no carga */
+    color: white;
+    text-align: center;
+    padding: 150px 20px; /* Más padding para espacio */
+    min-height: 70vh; /* Altura mínima para que la sección sea prominente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); /* Capa oscura para mejor contraste del texto */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Esto es la capa oscura, ya está en el box-shadow, pero si quisieras un overlay puro */
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 1.5s ease-out forwards; /* Animación de aparición */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
+}
+
+.hero-content h1 {
+    font-family: var(--font-family-display);
+    font-size: 3.8em; /* Tamaño de fuente grande para el título */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.5em; /* Tamaño de fuente para el subtítulo */
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: var(--color-text-light);
+}
+
+.btn-primary {
+    background-color: var(--color-accent); /* Color de botón principal */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px; /* Botones más redondeados */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-3px); /* Efecto de elevación al pasar el ratón */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 20px;
+        min-height: 60vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}

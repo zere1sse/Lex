@@ -1,0 +1,193 @@
+/* Estilos generales del encabezado (header) */
+.header {
+  display: flex; /* Permite organizar los elementos internos (logo y menú) en fila */
+  justify-content: space-between; /* Espacia el logo a la izquierda y el menú a la derecha */
+  align-items: center; /* Centra los elementos verticalmente */
+  padding: 15px 40px; /* Espaciado interno */
+  background-color: var(--color-primary-dark); /* Color de fondo del encabezado */
+  color: var(--color-primary-light); /* Color del texto general dentro del encabezado */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil debajo del encabezado */
+  z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+  position: relative; /* Necesario para posicionamiento de elementos hijos */
+}
+
+/* Estilos para el logo o nombre de la marca en el encabezado */
+.logo {
+  font-family: var(--font-family-display); /* Fuente del logo */
+  font-size: 1.8em; /* Tamaño del texto del logo */
+  font-weight: 700;
+  color: var(--color-accent); /* Color del logo */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  padding: 5px 0; /* Espaciado */
+}
+
+/* Estilos para el menú de navegación (la caja que contiene la lista) */
+.nav-menu {
+  display: flex; /* Permite que la lista de enlaces se organice en fila */
+  align-items: center; /* Centra verticalmente los elementos del menú */
+}
+
+/* Estilos para la lista no ordenada (ul) dentro del menú de navegación */
+.nav-menu ul {
+  list-style: none; /* ¡CRÍTICO! Esto quita los puntos de la lista */
+  padding: 0;      /* Elimina el padding predeterminado de la lista */
+  margin: 0;       /* Elimina el margen predeterminado de la lista */
+  display: flex;   /* Organiza los elementos de la lista (li) en fila */
+  gap: 20px;       /* Espacio entre cada elemento del menú */
+}
+
+/* Estilos para cada elemento de la lista (li) dentro del menú */
+.nav-menu li {
+  /* No se necesitan estilos específicos aquí a menos que quieras algo muy particular */
+}
+
+/* Estilos para los enlaces (a) dentro del menú */
+.nav-menu a {
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  color: var(--color-primary-light); /* Color del texto del enlace (blanco/gris claro) */
+  font-weight: 600; /* Peso de la fuente */
+  padding: 5px 0; /* Espaciado alrededor del texto del enlace */
+  position: relative; /* Necesario para la animación del subrayado */
+  transition: color 0.3s ease; /* Transición suave del color al pasar el ratón */
+}
+
+/* Animación de subrayado para los enlaces del menú */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent); /* Color del subrayado */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease; /* Animación de expansión del subrayado */
+}
+
+.nav-menu a:hover {
+  color: var(--color-accent); /* Cambia el color del texto al pasar el ratón */
+}
+
+.nav-menu a:hover::after {
+  width: 100%; /* Expande el subrayado al 100% al pasar el ratón */
+}
+
+/* Estilos para el botón de navegación (Cerrar Sesión) */
+.nav-button {
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  color: var(--color-primary-light); /* Color del texto */
+  font-weight: 600; /* Peso de la fuente */
+  font-size: 1.1em; /* Tamaño de la fuente */
+  cursor: pointer; /* Cursor de mano al pasar por encima */
+  padding: 5px 0; /* Espaciado */
+  position: relative; /* Necesario para la animación del subrayado */
+  transition: color 0.3s ease; /* Transición suave del color */
+  margin-left: 20px; /* Espacio a la izquierda del botón para separarlo del menú */
+}
+
+.nav-button::after { /* Animación de subrayado para el botón también */
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-button:hover {
+  color: var(--color-accent);
+}
+
+.nav-button:hover::after {
+  width: 100%;
+}
+
+/* --- Estilos para el menú móvil (Hamburger) --- */
+
+/* Oculta el botón de menú hamburguesa por defecto en pantallas grandes */
+.hamburger-menu {
+  display: none; /* Se oculta por defecto */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilos de las barras individuales del icono de hamburguesa */
+.hamburger-menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-primary-light); /* Color de las barras */
+  margin: 5px auto; /* Espacio entre las barras */
+  transition: all 0.3s ease; /* Transición suave para la animación */
+  border-radius: 2px;
+}
+
+/* Media query para pantallas más pequeñas (móviles y tablets) */
+@media (max-width: 768px) {
+  .header {
+    /* Mantener en fila en el header para que el logo y hamburguesa estén en la misma línea */
+    flex-direction: row;
+    /* Espaciar logo y hamburguesa */
+    justify-content: space-between;
+    /* Centrar verticalmente */
+    align-items: center;
+  }
+
+  /* El menú de navegación se convierte en un menú desplegable lateral */
+  .nav-menu {
+    position: fixed; /* Posicionamiento fijo para que cubra la pantalla */
+    top: 0;
+    right: -100%; /* Ocultar a la derecha por defecto */
+    width: 70%; /* Ancho del menú desplegable */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: var(--color-primary-dark); /* Mismo fondo que el encabezado */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: center; /* Centrar elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+    transition: right 0.4s ease-in-out; /* Animación de deslizamiento */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Sombra para el menú lateral */
+  }
+
+  /* Clase para mostrar el menú móvil */
+  .nav-menu.open {
+    right: 0; /* Desliza el menú para que sea visible */
+  }
+
+  /* La lista dentro del menú móvil se apila verticalmente */
+  .nav-menu ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Mayor espacio vertical entre los elementos del menú móvil */
+  .nav-menu li {
+    margin: 20px 0;
+  }
+
+  /* Texto más grande para tocar en el menú móvil */
+  .nav-menu a {
+    font-size: 1.5em;
+    padding: 10px 0;
+  }
+
+  /* Mostrar el botón hamburguesa en pantallas móviles */
+  .hamburger-menu {
+    display: block; /* Muestra el icono de hamburguesa */
+  }
+
+  /* Animación del icono de hamburguesa cuando el menú está abierto */
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

@@ -1,0 +1,160 @@
+/* src/sections/CaseSimulatorSection.css */
+
+.simulator-section {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.simulator-section .section-header {
+    margin-bottom: 60px;
+}
+
+.simulator-section .section-title {
+    font-size: 2.8em;
+    color: var(--color-primary-dark);
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.simulator-section .section-subtitle {
+    font-size: 1.2em;
+    color: var(--color-text-dark);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.simulator-content {
+    background-color: var(--color-text-light);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.case-display h3 {
+    font-size: 2em;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-primary-light);
+    padding-bottom: 10px;
+}
+
+.case-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: left;
+    color: var(--color-text-dark);
+}
+
+.stage-question {
+    font-size: 1.5em;
+    color: var(--color-primary-dark);
+    margin-bottom: 25px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- SOLUCIÓN PARA VISIBILIDAD DEL TEXTO --- */
+.option-button {
+    padding: 15px 25px;
+    font-size: 1.1em;
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark); /* ¡CAMBIO AQUÍ: Usamos el color oscuro del texto! */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.option-button:hover {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+    /* Asegúrate de que el color del texto en hover siga siendo visible */
+    color: white; /* Puedes mantenerlo blanco en hover para contraste, o usar otro oscuro */
+}
+/* ------------------------------------------- */
+
+
+.result-feedback {
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.result-feedback.correct {
+    background-color: #e6ffe6; /* Verde claro */
+    border: 2px solid #28a745; /* Verde */
+    color: #28a745;
+}
+
+.result-feedback.incorrect {
+    background-color: #ffe6e6; /* Rojo claro */
+    border: 2px solid #dc3545; /* Rojo */
+    color: #dc3545;
+}
+
+.result-feedback h4 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.feedback-text {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.reset-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .simulator-section {
+        padding: 60px 20px;
+    }
+    .simulator-section .section-title {
+        font-size: 2.2em;
+    }
+    .simulator-content {
+        padding: 20px;
+    }
+    .option-button {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+    .result-feedback h4 {
+        font-size: 1.5em;
+    }
+}

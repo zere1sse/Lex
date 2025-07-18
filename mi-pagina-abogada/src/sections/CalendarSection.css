@@ -1,0 +1,194 @@
+/* src/sections/CalendarSection.css */
+
+.calendar-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.calendar-section .section-header {
+    margin-bottom: 60px;
+}
+
+.calendar-section .section-title {
+    font-size: 2.8em;
+    color: var(--color-primary-dark);
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-section .section-subtitle {
+    font-size: 1.2em;
+    color: var(--color-text-dark);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Por defecto una columna en móvil */
+    gap: 40px;
+    background-color: var(--color-text-light);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .calendar-container {
+        grid-template-columns: 1fr 1.5fr; /* Dos columnas en pantallas más grandes */
+        text-align: left;
+    }
+}
+
+.add-event-form {
+    padding: 20px;
+    border-right: 1px solid var(--color-border); /* Separador visual */
+}
+
+@media (max-width: 767px) {
+    .add-event-form {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border); /* Separador para móvil */
+        padding-bottom: 40px;
+    }
+}
+
+.add-event-form h3, .events-list h3 {
+    font-size: 1.8em;
+    color: var(--color-primary-dark);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Asegura que los labels estén a la izquierda */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: var(--color-text-dark);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--color-text-dark);
+    background-color: #fcfcfc;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
+    outline: none;
+}
+
+.add-event-form .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.events-list {
+    padding: 20px;
+}
+
+.events-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.event-item {
+    background-color: var(--color-secondary-light);
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.event-item h4 {
+    margin: 0 0 8px 0;
+    color: var(--color-primary-dark);
+    font-size: 1.4em;
+}
+
+.event-item p {
+    margin: 0;
+    color: var(--color-text-dark);
+    font-size: 0.95em;
+}
+
+.event-date {
+    font-weight: bold;
+    color: var(--color-accent);
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.event-item .btn-danger {
+    background-color: #dc3545; /* Color rojo para eliminar */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    margin-left: 15px;
+}
+
+.event-item .btn-danger:hover {
+    background-color: #c82333;
+}
+
+.no-events {
+    font-style: italic;
+    color: var(--color-text-light-gray);
+    margin-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .calendar-section {
+        padding: 60px 20px;
+    }
+    .calendar-section .section-title {
+        font-size: 2.2em;
+    }
+    .calendar-container {
+        padding: 20px;
+    }
+}

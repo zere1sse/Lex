@@ -1,0 +1,156 @@
+/* src/sections/LibrarySection.css */
+
+.library-section {
+  padding: 80px 40px; /* Mantener un padding consistente con otras secciones */
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--color-primary-light); /* Un fondo ligeramente diferente al general */
+  border-bottom: 1px solid var(--color-border); /* Un separador sutil */
+  color: var(--color-text-dark);
+}
+
+.library-section .section-header {
+  text-align: center;
+  margin-bottom: 60px; /* Más espacio debajo del encabezado de la sección */
+}
+
+.library-section .section-title {
+  font-size: 2.8em; /* Tamaño de título grande */
+  color: var(--color-primary-dark);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.library-section .section-subtitle {
+  font-size: 1.2em;
+  color: var(--color-text-dark);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.library-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+  gap: 30px; /* Espacio entre los bloques de categoría */
+}
+
+.category-block {
+  background-color: var(--color-text-light); /* Fondo blanco para los bloques */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-block:hover {
+  transform: translateY(-5px); /* Pequeño efecto al pasar el ratón */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.category-block h3 {
+  font-family: var(--font-family-display);
+  font-size: 1.8em;
+  color: var(--color-primary-dark);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--color-accent); /* Una línea de acento */
+  padding-bottom: 10px;
+  display: inline-block; /* Para que la línea de acento solo abarque el texto */
+}
+
+.resource-list {
+  list-style: none; /* Eliminar los puntos de lista predeterminados */
+  padding: 0;
+  margin: 0;
+}
+
+.resource-list li {
+  margin-bottom: 15px; /* Espacio entre cada elemento de la lista */
+}
+
+.resource-list li a {
+  color: var(--color-primary-dark); /* Color de texto para los enlaces */
+  font-size: 1.1em;
+  display: block; /* Ocupa todo el ancho del li */
+  padding: 8px 0;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resource-list li a:hover {
+  background-color: var(--color-border); /* Fondo al pasar el ratón */
+  color: var(--color-accent); /* Color de acento al pasar el ratón */
+  padding-left: 10px; /* Pequeño indentado al pasar el ratón */
+}
+
+/* Estilos para Mis Apuntes Personalizados */
+.notes-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-family: var(--font-family-primary);
+  font-size: 1em;
+  resize: vertical; /* Permite redimensionar verticalmente */
+  margin-bottom: 15px;
+  background-color: var(--color-primary-light); /* Fondo para el textarea */
+  color: var(--color-text-dark);
+}
+
+.notes-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.2);
+}
+
+.notes-list-title {
+  font-size: 1.5em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: var(--color-primary-dark);
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-primary-light);
+}
+
+.note-item {
+  padding: 15px;
+  border-bottom: 1px dashed var(--color-border); /* Línea punteada para separar notas */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.95em;
+}
+
+.note-item:last-child {
+  border-bottom: none; /* Eliminar borde de la última nota */
+}
+
+.note-timestamp {
+  font-size: 0.8em;
+  color: var(--color-text-dark);
+  opacity: 0.7;
+  margin-left: 15px;
+  white-space: nowrap; /* Evita que la fecha se rompa en varias líneas */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .library-section {
+    padding: 60px 20px;
+  }
+  .library-section .section-title {
+    font-size: 2.2em;
+  }
+  .library-content {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+}
