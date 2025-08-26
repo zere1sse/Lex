@@ -14,25 +14,7 @@ Esta aplicación web es el sitio oficial de una firma de abogados ficticia, dise
 
 ---
 
-## 📂 Estructura del Proyecto
 
-El proyecto sigue una estructura modular para facilitar la organización y el mantenimiento:
-
-mi-pagina-abogada/
-├── public/             # Archivos estáticos (íconos, imágenes públicas)
-├── src/
-│   ├── assets/         # Imágenes, íconos y otros recursos estáticos del proyecto
-│   ├── auth/           # Contexto de autenticación y lógica relacionada (AuthContext.js)
-│   ├── components/     # Componentes reutilizables (Navbar, AuthModal, Login, etc.)
-│   ├── sections/       # Componentes que representan secciones completas de la página (HeroSection, AboutSection, NewsSection, etc.)
-│   ├── firebase.js     # Configuración de Firebase
-│   ├── App.jsx         # Componente principal de la aplicación
-│   ├── App.css         # Estilos globales de la aplicación
-│   └── main.jsx        # Punto de entrada de la aplicación React
-├── .env                # Variables de entorno (NO subir a Git si contiene credenciales sensibles)
-├── .gitignore          # Archivos y carpetas ignorados por Git
-├── package.json        # Dependencias y scripts del proyecto
-└── README.md           # Este archivo de documentación
 
 ---
 
